@@ -250,9 +250,9 @@ body{font-family:"Inter","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sa
     <div class="reveal"><div class="sec-eyebrow">Database Overview</div><h2 class="sec-headline">数据即洞察力</h2><p class="sec-subhead">SQLite 结构化元数据 + 文件系统大文件混合架构，整合多源灾损影像。</p></div>
     <div class="stats-grid">
       <div class="stat-callout reveal d1"><div class="corner-sq"></div><div class="stat-num">17</div><div class="stat-lbl">龙卷风事件（中美）</div></div>
-      <div class="stat-callout reveal d2"><div class="corner-sq"></div><div class="stat-num">1,278</div><div class="stat-lbl">灾损影像</div></div>
+      <div class="stat-callout reveal d2"><div class="corner-sq"></div><div class="stat-num">1,827</div><div class="stat-lbl">灾损影像</div></div>
       <div class="stat-callout reveal d3"><div class="corner-sq"></div><div class="stat-num">2,728</div><div class="stat-lbl">TornadoNet 人工标注</div></div>
-      <div class="stat-callout reveal d4"><div class="corner-sq"></div><div class="stat-num">1,850</div><div class="stat-lbl">AI 自动检测框</div></div>
+      <div class="stat-callout reveal d4"><div class="corner-sq"></div><div class="stat-num">12,385</div><div class="stat-lbl">AI 自动检测框</div></div>
       <div class="stat-callout reveal d5"><div class="corner-sq"></div><div class="stat-num">496</div><div class="stat-lbl">无人机航拍影像</div></div>
       <div class="stat-callout reveal d6"><div class="corner-sq"></div><div class="stat-num">9</div><div class="stat-lbl">灾损类别</div></div>
     </div>
@@ -262,7 +262,7 @@ body{font-family:"Inter","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sa
 <!-- ===== CHARTS (white canvas) ===== -->
 <section id="charts" class="canvas-section">
   <div class="inner">
-    <div class="reveal"><div class="sec-eyebrow">Statistical Analysis</div><h2 class="sec-headline">灾损模式数据洞察</h2><p class="sec-subhead">Grounding DINO 零样本检测 · 1850 个灾损目标全库统计。</p></div>
+    <div class="reveal"><div class="sec-eyebrow">Statistical Analysis</div><h2 class="sec-headline">灾损模式数据洞察</h2><p class="sec-subhead">Grounding DINO 零样本检测 · 12,385 个灾损目标全库统计。</p></div>
     <div class="charts-2col">
       <div class="chart-panel reveal"><div class="corner-sq"></div><h3>灾损类别分布</h3><p class="ch-sub">全库 AI 检测目标计数</p><div id="chartCat" class="chart-box"></div></div>
       <div class="chart-panel reveal d1"><div class="corner-sq"></div><h3>类别占比</h3><p class="ch-sub">九大灾损类型构成</p><div id="chartPie" class="chart-box"></div></div>
@@ -385,14 +385,14 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 /* ===== ECHARTS ===== */
 var AX={axisLine:{lineStyle:{color:'#ccc'}},axisLabel:{color:'#757575'},splitLine:{lineStyle:{color:'rgba(0,0,0,.04)'}}};
 var CATS=['电线杆折断','屋顶掀翻','建筑受损','折断的树','倒塌的电线杆','建筑倒塌','损坏的屋顶','其他','树木倒伏'];
-var VALS=[420,354,288,197,164,127,111,102,87];
+var VALS=[6228,2741,1942,813,197,164,111,102,87];
 var PAL=['#e87830','#e89850','#c878a0','#40b8a0','#e0a040','#d05860','#c060a0','#808898','#50a870'];
 var c1=echarts.init(document.getElementById('chartCat'));
 c1.setOption({tooltip:{trigger:'axis',backgroundColor:'#fff',borderColor:'#ccc',textStyle:{color:'#1a1a1a'}},grid:{left:8,right:44,top:20,bottom:0,containLabel:true},xAxis:Object.assign({type:'value'},AX),yAxis:Object.assign({type:'category',inverse:true,data:CATS},AX),series:[{type:'bar',data:VALS.map(function(v,i){return{value:v,itemStyle:{color:PAL[i],borderRadius:[0,2,2,0]}}}),barWidth:'56%',label:{show:true,position:'right',color:'#757575'},animationDelay:function(i){return i*60}}]});
 var c2=echarts.init(document.getElementById('chartPie'));
 c2.setOption({tooltip:{backgroundColor:'#fff',borderColor:'#ccc',textStyle:{color:'#1a1a1a'}},legend:{bottom:0,textStyle:{color:'#757575',fontSize:11},itemWidth:10,itemHeight:10},series:[{type:'pie',radius:['42%','68%'],center:['50%','44%'],itemStyle:{borderColor:'#fff',borderWidth:2,borderRadius:2},label:{color:'#757575',fontSize:11,formatter:'{b}\n{d}%'},data:CATS.map(function(n,i){return{name:n,value:VALS[i],itemStyle:{color:PAL[i]}}}),animationType:'scale',animationDelay:function(i){return i*40}}]});
-var EVTS=['盐城 2016\nEF4','开原 2019\nEF3','UAV 数据集','2026-06-23','2026-06-30'];
-var SER=[{n:'电线杆折断',d:[72,38,102,167,41]},{n:'屋顶掀翻',d:[72,45,88,109,40]},{n:'建筑受损',d:[52,36,93,81,26]},{n:'建筑倒塌',d:[33,17,28,31,18]},{n:'折断的树',d:[0,0,0,146,51]},{n:'倒塌的电线杆',d:[0,0,0,141,23]},{n:'损坏的屋顶',d:[0,0,0,100,11]},{n:'树木倒伏',d:[0,0,87,0,0]}];
+var EVTS=['盐城 2016\nEF4','开原 2019\nEF3','UAV 数据集','2026-06-23','2026-06-30','渭南航拍'];
+var SER=[{n:'电线杆折断',d:[72,38,102,167,41,722]},{n:'屋顶掀翻',d:[72,45,88,109,40,3422]},{n:'建筑受损',d:[52,36,93,81,26,1318]},{n:'建筑倒塌',d:[33,17,28,31,18,333]},{n:'折断的树',d:[0,0,0,146,51,0]},{n:'倒塌的电线杆',d:[0,0,0,141,23,0]},{n:'损坏的屋顶',d:[0,0,0,100,11,0]},{n:'树木倒伏',d:[0,0,87,0,0,0]}];
 var c3=echarts.init(document.getElementById('chartEvent'));
 c3.setOption({tooltip:{trigger:'axis',backgroundColor:'#fff',borderColor:'#ccc',textStyle:{color:'#1a1a1a'}},legend:{top:0,textStyle:{color:'#757575',fontSize:11}},grid:{left:8,right:14,top:56,bottom:0,containLabel:true},xAxis:Object.assign({type:'category',data:EVTS},AX,{axisLabel:{color:'#757575',interval:0,fontSize:11}}),yAxis:Object.assign({type:'value'},AX),series:SER.map(function(s,i){return{name:s.n,type:'bar',stack:'a',data:s.d,itemStyle:{color:PAL[i]},barWidth:'46%',emphasis:{focus:'series'}}})});
 var c4=echarts.init(document.getElementById('chartModel'));
