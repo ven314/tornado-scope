@@ -285,6 +285,10 @@ body{font-family:"Inter","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sa
     <div class="g-card"><img src="assets/v2_cn_2026_0623_20260705_004.jpg" loading="lazy"><div class="g-cap"><span>2026-06-23 · V2</span>优化检测结果</div></div>
     <div class="g-card"><img src="assets/all_cn_2026_0630_20260705_001.jpg" loading="lazy"><div class="g-cap"><span>2026-06-30</span>多类别灾损联合检测</div></div>
     <div class="g-card"><img src="assets/v2_cn_2026_0630_20260705_007.jpg" loading="lazy"><div class="g-cap"><span>2026-06-30 · V2</span>优化检测结果</div></div>
+    <div class="g-card"><img src="assets/weinan_samples/DJI_20260702143230_0011_V_detected.jpg" loading="lazy"><div class="g-cap"><span>渭南航拍</span>24 个灾损目标自动检测</div></div>
+    <div class="g-card"><img src="assets/weinan_samples/DJI_20260702143231_0012_V_detected.jpg" loading="lazy"><div class="g-cap"><span>渭南航拍</span>25 个检测框 · 屋顶/建筑/电线杆</div></div>
+    <div class="g-card"><img src="assets/weinan_samples/DJI_20260702143702_0394_V_detected.jpg" loading="lazy"><div class="g-cap"><span>渭南航拍</span>22 个检测框 · 飞行路径连续检测</div></div>
+    <div class="g-card"><img src="assets/weinan_samples/DJI_20260702143815_0490_V_detected.jpg" loading="lazy"><div class="g-cap"><span>渭南航拍</span>25 个检测框 · 航测末端区域</div></div>
   </div>
   </div>
   <div class="g-hint" style="padding:0 48px;max-width:1280px;margin:0 auto">⟵ 拖动浏览 或点箭头导航 ⟶</div>
@@ -298,6 +302,14 @@ body{font-family:"Inter","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sa
       <div class="uav-card reveal d1"><img src="assets/orthophoto_preview.jpg" loading="lazy"><div class="uav-body"><h4>正射影像图</h4><p>ODM 拼接生成的地理配准正射影像，可导入 QGIS / ArcGIS 测量分析。</p><div class="tags"><span>GeoTIFF</span><span>3D 纹理模型</span></div></div></div>
       <div class="uav-card reveal d2"><img src="assets/weinan_photo_map.jpg" loading="lazy"><div class="uav-body"><h4>飞行轨迹与点位</h4><p>从 DJI EXIF 提取 GPS，重建飞行航线和拍摄位置分布。</p><div class="tags"><span>EXIF GPS</span><span>轨迹重建</span></div></div></div>
       <div class="uav-card reveal d3"><img src="assets/weinan_trajectory_dots.jpg" loading="lazy"><div class="uav-body"><h4>航点密度分析</h4><p>496 拍摄点空间分布，展示航线覆盖范围与重叠率。</p><div class="tags"><span>496 航点</span><span>空间分析</span></div></div></div>
+    </div>
+    <div class="reveal" style="margin-top:24px">
+      <p class="ch-sub">AI 检测结果：Grounding DINO 在 496 张航拍图上自动检测到 <strong style="color:var(--accent)">5,795</strong> 个灾损目标</p>
+      <div class="uav-grid" style="margin-top:12px">
+        <div class="uav-card reveal d1"><img src="assets/weinan_samples/DJI_20260702143230_0011_V_detected.jpg" loading="lazy" class="lb"><div class="uav-body"><h4>密集检测样例</h4><p>单图最高检测 28 个灾损目标，覆盖屋顶掀翻、建筑受损、电线杆折断等类别。</p><div class="tags"><span>24 检测框</span><span>多类别</span></div></div></div>
+        <div class="uav-card reveal d2"><img src="assets/weinan_samples/DJI_20260702143702_0394_V_detected.jpg" loading="lazy" class="lb"><div class="uav-body"><h4>航测路径检测</h4><p>沿飞行轨迹连续检测，5,795 个标注框覆盖主要飞行区域。</p><div class="tags"><span>GPU 加速</span><span>0.5s/张</span></div></div></div>
+        <div class="uav-card reveal d3"><img src="assets/weinan_samples/DJI_20260702143815_0490_V_detected.jpg" loading="lazy" class="lb"><div class="uav-body"><h4>GPU 批量检测</h4><p>RTX 4060 加速推理，496 张仅需 4.5 分钟，单张 0.5 秒。</p><div class="tags"><span>CUDA</span><span>12,385 全库</span></div></div></div>
+      </div>
     </div>
   </div>
 </section>
