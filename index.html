@@ -388,7 +388,7 @@ body{font-family:"Inter","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sa
 
 <script>
 /* force video play */
-var hv=document.querySelector('video');if(hv){hv.play().catch(function(){});document.addEventListener('click',function(){hv.play().catch(function(){})},{once:true})}
+var hv=document.querySelector('video');if(hv){function tp(){hv.play().catch(function(){})}hv.addEventListener('loadedmetadata',tp);hv.addEventListener('canplay',tp);setTimeout(tp,500);document.addEventListener('click',function(){hv.play().catch(function(){})},{once:true})}
 
 /* reveal */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.15});
