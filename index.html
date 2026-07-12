@@ -413,7 +413,7 @@ addEventListener('resize',function(){[c1,c2,c3,c4].forEach(function(c){c.resize(
 
 /* ===== LEAFLET ===== */
 var map=L.map('eventMap',{scrollWheelZoom:false,zoomControl:false}).setView([33,112],4.5);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OSM © CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+L.tileLayer('https://webrd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{maxZoom:19}).addTo(map);
 L.control.zoom({position:'bottomright'}).addTo(map);
 var EVENTS=[{n:'2015 佛山 EF3',d:'2015-10-04',ef:'EF3',lat:22.84,lon:113.25,img:0,det:0},{n:'2016 盐城阜宁 EF4',d:'2016-06-23',ef:'EF4',lat:33.78,lon:119.8,img:45,det:229},{n:'2018 佛山 EF3',d:'2018-03-04',ef:'EF3',lat:23.03,lon:113.15,img:0,det:0},{n:'2019 开原 EF3',d:'2019-07-03',ef:'EF3',lat:42.54,lon:124.04,img:27,det:136},{n:'2020 宿州 EF3',d:'2020-07-22',ef:'EF3',lat:33.64,lon:116.98,img:0,det:0},{n:'2021 苏州 EF3',d:'2021-05-14',ef:'EF3',lat:31.3,lon:120.6,img:0,det:0},{n:'2021 Midwest EF4',d:'2021-12-10',ef:'EF4',lat:37.5,lon:-89.5,img:1002,det:0},{n:'2022 从化 EF2',d:'2022-06-15',ef:'EF2',lat:23.55,lon:113.59,img:0,det:0},{n:'2023 阜新 EF2',d:'2023-06-01',ef:'EF2',lat:42.02,lon:121.74,img:0,det:0},{n:'2023 宿迁 EF3',d:'2023-09-19',ef:'EF3',lat:33.95,lon:118.27,img:0,det:0},{n:'2024 白云 EF2',d:'2024-04-27',ef:'EF2',lat:23.23,lon:113.27,img:0,det:0},{n:'2024 菏泽 EF3',d:'2024-07-05',ef:'EF3',lat:35.24,lon:115.09,img:0,det:0},{n:'2025 菏泽 EF2',d:'2025-05-08',ef:'EF2',lat:35.26,lon:115.07,img:0,det:0},{n:'2025 江苏 EF2',d:'2025-06-01',ef:'EF2',lat:33.96,lon:118.3,img:0,det:0},{n:'2026 黄冈',d:'2026-07-08',ef:'EF1',lat:30.45,lon:114.92,img:4178,det:51167}];
 var EFC={EF1:'#80b880',EF2:'#e0a040',EF3:'#e87830',EF4:'#d05050'};
